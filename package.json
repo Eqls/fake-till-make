@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsc && node dist/app.js",
     "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "resource": "node dist/cli.js"
   },
   "repository": {
     "type": "git",
