@@ -1,9 +1,9 @@
 import * as words from './utils/words.json';
 
-export default function (model: any, amount: number) {
+export default function generateData(model: any, amount: number) {
 
-    const data = Array.from(Array(amount)).map(() => applyValues(model, amount));
-    console.log(JSON.stringify(data, null, 2))
+    return Array.from(Array(amount)).map(() => applyValues(model, amount));
+
 }
 
 function applyValues(model: any, amount: number) {
@@ -14,17 +14,15 @@ function applyValues(model: any, amount: number) {
     for (const key of keys) {
         if (typeof temp[key] === 'object' && Array.isArray(temp[key])) {
             if (typeof temp[key][0] === 'string') {
-                temp[key] = [
+                temp[key] =
                     Array.from(Array(randomizedAmount)).map(() =>
                         generateFieldData(temp[key][0]),
-                    ),
-                ]
+                    )
             } else {
-                temp[key] = [
+                temp[key] =
                     Array.from(Array(randomizedAmount)).map(() =>
                         applyValues(temp[key][0], amount),
-                    ),
-                ]
+                    )
             }
         } else if (typeof temp[key] === 'object') {
             temp[key] = applyValues(temp[key], amount)
