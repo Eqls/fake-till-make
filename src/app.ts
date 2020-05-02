@@ -5,11 +5,14 @@ import parse from './parse';
 import generateData from './generate-data';
 
 const app = express();
+const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 const resources = parse();
+
+// TODO Model type enforcing.
 
 for(let resource of resources) {
 
@@ -54,8 +57,6 @@ for(let resource of resources) {
     });
 }
 
-// console.log(JSON.stringify(data, null, 2))
-
-app.listen( 3000, () => {
-    console.log( `server started at http://localhost:${ 3000 }` );
+app.listen( PORT, () => {
+    console.log( `server started at http://localhost:${ PORT }` );
 } );
