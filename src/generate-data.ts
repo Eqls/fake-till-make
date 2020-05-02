@@ -2,7 +2,7 @@ import * as words from './utils/words.json';
 
 export default function generateData(model: any, amount: number) {
 
-    return Array.from(Array(amount)).map(() => applyValues(model, amount));
+    return Array.from(Array(amount)).map((_, index) => ({id: index, ...applyValues(model, amount)}));
 
 }
 
