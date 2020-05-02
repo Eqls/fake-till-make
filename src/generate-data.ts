@@ -1,17 +1,15 @@
-import * as words from './utils/words.json'
+import * as words from './utils/words.json';
 
 export default function (model: any, amount: number) {
-    console.log(JSON.stringify(applyValues(model, 5), null, 2))
-    //TODO Model structure parsing.
 
-    const data = Array.from(Array(amount)).map(() => applyValues(model, amount))
+    const data = Array.from(Array(amount)).map(() => applyValues(model, amount));
     console.log(JSON.stringify(data, null, 2))
 }
 
 function applyValues(model: any, amount: number) {
-    let randomizedAmount = Math.floor(Math.random() * amount)
-    let temp = { ...model }
-    const keys = Object.keys(temp)
+    const randomizedAmount = Math.floor(Math.random() * amount) + 1;
+    let temp = { ...model };
+    const keys = Object.keys(temp);
 
     for (const key of keys) {
         if (typeof temp[key] === 'object' && Array.isArray(temp[key])) {
@@ -43,10 +41,10 @@ function randomNumber() {
 }
 
 function randomString() {
-    let data = []
+    let data = [];
+
     for (let i = 0; i < Math.floor(Math.random() * 10); i++) {
-        // console.log(words[Math.floor(Math.random() * words.length)])
-        data.push(words[Math.floor(Math.random() * words.length)])
+        data.push(words.array[Math.floor(Math.random() * words.array.length)])
     }
 
     return data.join(' ')
