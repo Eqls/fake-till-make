@@ -25,3 +25,8 @@ Every resource model requires to have <b>model</b> and <b>dataAmount</b>.
   "dataAmount": 2
 }
 ```
+
+| Field         | Description   |
+| ------------- |:-------------:|
+| model         | resource object structure |
+| dataAmount    | the amount of data should be generated |
