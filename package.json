@@ -1,8 +1,9 @@
 {
-  "name": "mockify",
+  "name": "fake-till-make",
   "version": "0.0.1",
   "description": "Generate simple yet flexible REST API with minimal effort.",
   "main": "dist/app.js",
+  "types": "app.d.ts",
   "scripts": {
     "start": "tsc && node dist/app.js",
     "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
@@ -11,14 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eqls/mockify.git"
+    "url": "git+https://github.com/Eqls/fake-till-make.git"
   },
   "author": "Eqls",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Eqls/mockify/issues"
+    "url": "https://github.com/Eqls/fake-till-make/issues"
   },
-  "homepage": "https://github.com/Eqls/mockify#readme",
+  "keywords": [
+    "json",
+    "server",
+    "api",
+    "mocks"
+  ],
+  "homepage": "https://github.com/Eqls/fake-till-make#readme",
   "devDependencies": {
     "@types/express": "^4.17.6",
     "@types/node": "^13.13.4",
