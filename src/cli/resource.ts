@@ -1,15 +1,15 @@
 import readline from 'readline';
 
-import * as generateResource from "./generate-resource";
+import * as generateResource from "../generate-resource";
 
-const [node, cli, resourceName, dataAmount] = process.argv;
+const [node, cli, keyword, resourceName, dataAmount] = process.argv;
 
 interface Arguments {
     resourceName: string;
     dataAmount: number;
 }
 
-async function run() {
+export default async function run() {
 
     const rl = readline.createInterface({
         input: process.stdin,
@@ -32,7 +32,5 @@ async function run() {
     }
 
     await generateResource.generateResource(args.resourceName, args.dataAmount);
-    console.log('Resource file was successfully generates')
+    console.log('Resource file was successfully generated!')
 }
-
-(async () => await run())();

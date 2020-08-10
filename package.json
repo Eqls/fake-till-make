@@ -1,14 +1,17 @@
 {
   "name": "fake-till-make",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Generate simple yet flexible REST API with minimal effort.",
   "main": "dist/app.js",
   "types": "app.d.ts",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
+    "watch": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/cli/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "resource": "node dist/cli.js"
+  },
+  "bin": {
+    "fake-till-make": "dist/cli/index.js"
   },
   "repository": {
     "type": "git",

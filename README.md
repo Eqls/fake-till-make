@@ -2,24 +2,32 @@
 
 Generate simple yet flexible REST API with minimal effort.
 
-# usage
+## installation
 
-## create resource
+```npm i fake-till-make```
 
-```npm run resource <resource name>```
+## usage
 
-## example resource model
+### create resource
+
+```fake-till-make resource <resource name> <data amount>```
+
+### run server
+
+```fake-till-make start <port>```
+
+### example resource model
 
 Every resource model requires to have <b>model</b> and <b>dataAmount</b>.
 
 ```$xslt
 {
   "model": {
-    "exampleField": "just a string",
-    "name": "Matt",
+    "exampleField": "string",
+    "name": "string",
     "contacts": [{
-      "id": "123",
-      "name": "Josh"
+      "id": "number",
+      "name": "string"
     }]
   },
   "dataAmount": 2
